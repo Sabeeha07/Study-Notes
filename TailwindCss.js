@@ -21,19 +21,66 @@ that is alsoi mentioned in the docs that cdn is not recommmnded.
 
 Sahi Tariqa :-Tailwind CLI 
 1)sabse pehle node hona chahiye system me . node -v --. check node in the system.
+****************************************
+for local other than react 
+
+mkdir mytailwindproject
+cd mytailwindproject
+npm init -y //this will genrate packag.json So npm can track depenedincies
+
+npm instal -D tailwindcss postcss autoprefixer 
+npx tailwindcss init -p 
+//If above commands doesnt work 
+degrade the version and run this
+
+npm init -y //this will genrate packag.json So npm can track depenedincies
+
+npm i -D tailwindcss@3.4.10 postcss autoprefixer 
+npx tailwindcss@3.4.10  init -p 
+
+ src ke andar ham ek file banaynge
+input.CSS
+
+@tailwind base
+@tailwind components
+@tailwind utilities
+ npx tailwindcss -i ./src/input.css -o ./dist/style.css //For local
+ ya fir package.json --->ke andar jakatr 
+ "build":"tailwindcss -i ./src/input.css -o ./output.css --watch"
+ 
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"tailwindcss -i ./src/input.css -o ./output.css --watch"
+  },
+   npm run build
+ 
+ create -->index.html and put 
+ link --> output.css
+
+
+
+**************************************************
+
+
 2)first go to vs code and make two folder --> dist ,src ( yahan code file rekhenge)
 dist --> index.html 
 3)go to terminal 
  npx tailwindcss init
 ye config.js bana kr dega 
 
+
+
 4) src ke andar ham ek file banaynge
 input.CSS
 
 @tailwind base
-@tailwind components@tailwind utilities
+@tailwind components
+@tailwind utilities
 
 settings me jaao --> search me unknown rules --> ko band kr do -- lint in \
+
+
+
 
 5) index.html me jaao -->DOM bnaao 
 <h1 class="bg-slate-500"> Test </h1)
@@ -45,12 +92,17 @@ par abhi bhi nahi aaya?
 css file hee link nahi h ?
 6)
 customise css generate krna padega 
- npx tailwindcss -i ./src/imnput.css -o ./dist/style.css
+dono me se ek chlao 
+ npx tailwindcss -i ./src/input.css -o ./dist/style //For react
+
+ 
 Isse file ban jaayegi.--> style.css
 7) NOW LINK TO DOM
 <link rel ="stylesheet" href="style.css"
+<link rel ="stylesheet" href="output.css"
 
-8) now change class to bosy to see changes 
+
+8) now change class to body to see changes 
 class="bg-slate-500"
 9) h1 ke upar 
 class ="text-white"
@@ -213,7 +265,6 @@ px-4 --> x axis pr padding
 
 hidden :- isse hmesha hide rhega \
 breakpoit pa flex laga do 
-
 
 
 
